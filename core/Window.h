@@ -1,0 +1,104 @@
+#ifndef WINDOW_H
+// #include <glad/glad.h>
+#include <GLFW/glfw3.h>
+
+class Window
+{
+private:
+    GLFWwindow *nWindow;
+    int nWidth, nHeight;
+    const char *nTitle;
+
+public:
+    Window(int width, int height, const char *title);
+    ~Window();
+    void initialize();
+    void createWindow();
+    GLFWwindow *getWindow();
+    bool shouldClose();
+    void swapBuffers();
+    void poolEvents();
+    void clear();
+};
+
+void framebuffer_size_callback(GLFWwindow *window, int width, int height);
+
+Window::Window(int width, int height, const char *title)
+{
+
+    nWidth = width;
+    nHeight = height;
+    nTitle = title;
+}
+
+Window::~Window()
+{
+    glfwDestroyWindow(nWindow);
+    glfwTerminate();
+}
+
+void Window::initialize()
+{
+    glfwInit();
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GLFW_OPENGL_CORE_PROFILE);
+
+    createWindow();
+}
+
+void Window::createWindow()
+{
+    nWindow = glfwCreateWindow(800, 600, "Silly Engine", NULL, NULL);
+
+    if (nWindow == NULL)
+    {
+        cout << "Failed to create window" << endl;
+        glfwTerminate();
+    }
+
+    glfwMakeContextCurrent(nWindow);
+
+    glfwSetFramebufferSizeCallback(nWindow, framebuffer_size_callback);
+
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    {
+        cout << "Failed to initialize GLAD" << endl;
+    }
+
+    glEnable(GL_DEPTH_TEST);
+}
+
+GLFWwindow *Window::getWindow()
+{
+    return nWindow;
+}
+
+bool Window::shouldClose()
+{
+    return glfwWindowShouldClose(nWindow);
+}
+
+void Window::swapBuffers()
+{
+    glfwSwapBuffers(nWindow);
+}
+
+void Window::poolEvents()
+{
+    glfwPollEvents();
+}
+
+void Window::clear()
+{
+    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+}
+
+void framebuffer_size_callback(GLFWwindow *window, int width, int height)
+{
+    glViewport(0, 0, height, width);
+}
+
+#endif
