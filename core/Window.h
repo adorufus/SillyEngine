@@ -8,6 +8,8 @@ private:
     GLFWwindow *nWindow;
     int nWidth, nHeight;
     const char *nTitle;
+    GLFWcursorposfun nMouseCallback;
+    GLFWscrollfun nMouseScrollCallback;
 
 public:
     Window(int width, int height, const char *title);
@@ -19,6 +21,7 @@ public:
     void swapBuffers();
     void poolEvents();
     void clear();
+    void setMouseCallback(GLFWcursorposfun mouse_callback, GLFWscrollfun scroll_callback);
 };
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
@@ -62,6 +65,11 @@ void Window::createWindow()
 
     glfwSetFramebufferSizeCallback(nWindow, framebuffer_size_callback);
 
+    glfwSetCursorPosCallback(nWindow, nMouseCallback);
+    glfwSetScrollCallback(nWindow, nMouseScrollCallback);
+
+    glfwSetInputMode(nWindow, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
         cout << "Failed to initialize GLAD" << endl;
@@ -73,6 +81,11 @@ void Window::createWindow()
 GLFWwindow *Window::getWindow()
 {
     return nWindow;
+}
+
+void Window::setMouseCallback(GLFWcursorposfun mouse_callback, GLFWscrollfun scroll_callback) {
+    nMouseCallback = mouse_callback;
+    nMouseScrollCallback = scroll_callback;
 }
 
 bool Window::shouldClose()

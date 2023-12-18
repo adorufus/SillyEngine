@@ -8,6 +8,9 @@ enum class KeyCode {
     S = GLFW_KEY_S,
     D = GLFW_KEY_D,
     G = GLFW_KEY_G,
+    Q = GLFW_KEY_Q,
+    E = GLFW_KEY_E,
+    SHIFT = GLFW_KEY_LEFT_SHIFT,
     esc = GLFW_KEY_ESCAPE,
 };
 
