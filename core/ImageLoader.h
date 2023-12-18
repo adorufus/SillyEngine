@@ -1,4 +1,5 @@
 #ifndef IMAGE_LOADER_H
+#define IMAGE_LOADER_H
 #define STB_IMAGE_IMPLEMENTATION
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>

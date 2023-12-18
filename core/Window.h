@@ -1,11 +1,14 @@
-#ifndef WINDOW_H
-// #include <glad/glad.h>
+#pragma once
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <iostream>
+
+using namespace std;
 
 class Window
 {
 private:
-    GLFWwindow *nWindow;
+    static GLFWwindow *nWindow;
     int nWidth, nHeight;
     const char *nTitle;
     GLFWcursorposfun nMouseCallback;
@@ -16,11 +19,12 @@ public:
     ~Window();
     void initialize();
     void createWindow();
-    GLFWwindow *getWindow();
+    static GLFWwindow *getWindow();
     bool shouldClose();
     void swapBuffers();
     void poolEvents();
-    void clear();
+    static void clear();
+    void destroy();
     void setMouseCallback(GLFWcursorposfun mouse_callback, GLFWscrollfun scroll_callback);
 };
 
@@ -36,8 +40,7 @@ Window::Window(int width, int height, const char *title)
 
 Window::~Window()
 {
-    glfwDestroyWindow(nWindow);
-    glfwTerminate();
+    destroy();
 }
 
 void Window::initialize()
@@ -83,7 +86,8 @@ GLFWwindow *Window::getWindow()
     return nWindow;
 }
 
-void Window::setMouseCallback(GLFWcursorposfun mouse_callback, GLFWscrollfun scroll_callback) {
+void Window::setMouseCallback(GLFWcursorposfun mouse_callback, GLFWscrollfun scroll_callback)
+{
     nMouseCallback = mouse_callback;
     nMouseScrollCallback = scroll_callback;
 }
@@ -109,9 +113,13 @@ void Window::clear()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
+void Window::destroy()
+{
+    glfwDestroyWindow(nWindow);
+    glfwTerminate();
+}
+
 void framebuffer_size_callback(GLFWwindow *window, int width, int height)
 {
     glViewport(0, 0, height, width);
 }
-
-#endif

@@ -1,8 +1,10 @@
 #ifndef INPUT_H
+#define INPUT_H
 
 #include <GLFW/glfw3.h>
 
-enum class KeyCode {
+enum class KeyCode
+{
     W = GLFW_KEY_W,
     A = GLFW_KEY_A,
     S = GLFW_KEY_S,
@@ -18,11 +20,11 @@ class Input
 {
 private:
     GLFWwindow *nWindow;
+
 public:
     Input(GLFWwindow *window);
     ~Input();
     bool getKeyPressed(KeyCode key) const;
 };
-
 
 #endif
