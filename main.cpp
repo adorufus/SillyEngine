@@ -1,10 +1,42 @@
 #include "core/Window.h"
 #include "core/Engine.h"
 
+void mouse_callback(GLFWwindow *window, double xposIn, double yposIn)
+{
+    // float xpos = static_cast<float>(xposIn);
+    // float ypos = static_cast<float>(yposIn);
+
+    // if (firstMouse)
+    // {
+    //     lastX = xpos;
+    //     lastY = ypos;
+    //     firstMouse = false;
+    // }
+
+    // float xoffset = xpos - lastX;
+    // float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
+
+    // lastX = xpos;
+    // lastY = ypos;
+
+    // camera.ProcessMouseMovement(xoffset, yoffset);
+    
+}
+
+void scroll_callback(GLFWwindow *window, double xoffset, double yoffset)
+{
+    // camera.ProcessMouseScroll(static_cast<float>(yoffset));
+}
+
 int main()
 {
     Window windowInstance(800, 600, "Silly Engine");
+    windowInstance.initialize();
+    // windowInstance.setMouseCallback(mouse_callback, scroll_callback);
     Engine engine(&windowInstance, 60);
+
+    engine.start();
+
     return 0;
 }
 

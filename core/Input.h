@@ -25,6 +25,7 @@ public:
     Input(GLFWwindow *window);
     ~Input();
     bool getKeyPressed(KeyCode key) const;
+    static void update(float delta);
 };
 
 #endif

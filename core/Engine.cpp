@@ -37,9 +37,15 @@ void Engine::run()
     double unprocessedTime = 0;
     double frameCounter = 0;
     int frames = 0;
+    Input input(m_Window->getWindow());
 
     while (m_isRunning)
     {
+
+        if(input.getKeyPressed(KeyCode::esc)) {
+            glfwSetWindowShouldClose(m_Window->getWindow(), true);
+        }
+
         bool render = false;
         double startTime = glfwGetTime();
         double elapsedTime = startTime - prevTime;
@@ -58,7 +64,7 @@ void Engine::run()
             frameCounter = 0;
 
             // Print FPS to Terminal
-            // std::cout << fps << std::endl;
+            std::cout << fps << std::endl;
         }
 
         while(unprocessedTime > m_frameTime) {
@@ -74,6 +80,7 @@ void Engine::run()
 
         if(render) {
             //do render things here
+            this->render();
             frames++;
         } else {
             this_thread::sleep_for(chrono::milliseconds(10));
@@ -96,10 +103,12 @@ void Engine::input(float delta) {
 
 void Engine::update(float delta) {
     //update game content here
-    m_Window->poolEvents();
+    Input::update(delta);
+    // m_Window->poolEvents();
 }
 
 void Engine::render(/*will be adding render engine later*/) {
+    m_Window->clear();
     m_Window->swapBuffers();
 }
 
