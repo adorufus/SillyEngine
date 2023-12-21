@@ -64,7 +64,7 @@ void Engine::run()
             frameCounter = 0;
 
             // Print FPS to Terminal
-            std::cout << fps << std::endl;
+            // std::cout << fps << std::endl;
         }
 
         while(unprocessedTime > m_frameTime) {
