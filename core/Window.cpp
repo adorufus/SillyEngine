@@ -42,8 +42,8 @@ void Window::createWindow()
 
     glfwSetFramebufferSizeCallback(nWindow, framebuffer_size_callback);
 
-    // glfwSetCursorPosCallback(nWindow, nMouseCallback);
-    // glfwSetScrollCallback(nWindow, nMouseScrollCallback);
+    glfwSetCursorPosCallback(nWindow, nMouseCallback);
+    glfwSetScrollCallback(nWindow, nMouseScrollCallback);
 
     glfwSetInputMode(nWindow, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 

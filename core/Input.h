@@ -1,5 +1,4 @@
-#ifndef INPUT_H
-#define INPUT_H
+#pragma once
 
 #include <GLFW/glfw3.h>
 
@@ -27,5 +26,3 @@ public:
     bool getKeyPressed(KeyCode key) const;
     static void update(float delta);
 };
-
-#endif
