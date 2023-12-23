@@ -50,7 +50,7 @@ Shader::Shader(const char *vertexPath, const char *fragmentPath, const char *geo
     const GLchar *vShaderCode = vertexCode.c_str();
     const GLchar *fShaderCode = fragmentCode.c_str();
 
-    cout << vShaderCode;
+    // cout << vShaderCode;
 
     unsigned int vertex, fragment, geometry;
     int success;

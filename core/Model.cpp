@@ -15,7 +15,7 @@ void Model::draw(Shader &shader)
 void Model::loadModel(string path)
 {
     Assimp::Importer import;
-    const aiScene *scene = import.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs);
+    const aiScene *scene = import.ReadFile(path, aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_FlipUVs | aiProcess_CalcTangentSpace);
 
     if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
     {
@@ -24,6 +24,8 @@ void Model::loadModel(string path)
     }
 
     directory = path.substr(0, path.find_last_of('/'));
+
+    cout << "dir:" << directory << endl;
 
     processNode(scene->mRootNode, scene);
 }
@@ -71,6 +73,16 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
             vec.x = mesh->mTextureCoords[0][i].x;
             vec.y = mesh->mTextureCoords[0][i].y;
             vertex.TexCoords = vec;
+
+            // vector.x = mesh->mTangents[i].x;
+            // vector.y = mesh->mTangents[i].y;
+            // vector.z = mesh->mTangents[i].z;
+            // vertex.Tangent = vector;
+
+            // vector.x = mesh->mBitangents[i].x;
+            // vector.y = mesh->mBitangents[i].y;
+            // vector.z = mesh->mBitangents[i].z;
+            // vertex.Bitangent = vector;
         }
         else
         {
@@ -89,6 +101,18 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
         }
     }
 
+    aiMaterial *material = scene->mMaterials[mesh->mMaterialIndex];
+
+    vector<Texture> diffuseMaps = loadMaterialTextures(material, aiTextureType_DIFFUSE, "texture_diffuse");
+    textures.insert(textures.end(), diffuseMaps.begin(), diffuseMaps.end());
+
+    vector<Texture> specularMaps = loadMaterialTextures(material, aiTextureType_SPECULAR, "texture_specular");
+    textures.insert(textures.end(), specularMaps.begin(), specularMaps.end());
+    // vector<Texture> normalMaps = loadMaterialTextures(material, aiTextureType_HEIGHT, "texture_normal");
+    // textures.insert(textures.end(), normalMaps.begin(), normalMaps.end());
+    // vector<Texture> heightMaps = loadMaterialTextures(material, aiTextureType_AMBIENT, "texture_height");
+    // textures.insert(textures.end(), heightMaps.begin(), heightMaps.end());
+
     return Mesh(vertices, indices, textures);
 }
 
@@ -103,7 +127,8 @@ vector<Texture> Model::loadMaterialTextures(aiMaterial *mat, aiTextureType type,
 
         for (unsigned int j = 0; j < textures_loaded.size(); j++)
         {
-            if(strcmp(textures_loaded[j].path.data(), str.C_Str()) == 0) {
+            if (strcmp(textures_loaded[j].path.data(), str.C_Str()) == 0)
+            {
                 textures.push_back(textures_loaded[j]);
                 skip = true;
                 break;

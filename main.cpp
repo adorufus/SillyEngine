@@ -159,9 +159,9 @@ int main()
 
     // compile shaders section
 
-    Shader ourShader("assets/shaders/vertexShader.vs", "assets/shaders/fragmentShader.vs");
+    Shader ourShader("assets/shaders/basic.vs", "assets/shaders/basic.fs");
     Shader lightingShader("assets/shaders/lightingShader.vs", "assets/shaders/lightingShader.fs");
-    Model firstModel("assets/models/merdeges.obj");
+    Model firstModel("assets/models/backpack.obj");
 
     // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 

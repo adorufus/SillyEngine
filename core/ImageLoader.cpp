@@ -1,4 +1,6 @@
 #include "ImageLoader.h"
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
 
 TextureLoader::TextureLoader()
 {
@@ -6,8 +8,12 @@ TextureLoader::TextureLoader()
 
 void TextureLoader::loadTexture(const char *path, const string &directory, bool gamma)
 {
+
+    cout << "loading textures" << endl;
     string filename = string(path);
     filename = directory + '/' + filename;
+
+    cout << "kaki kuda:" << filename << endl;
 
     glGenTextures(1, &texture);
 
