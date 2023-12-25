@@ -32,7 +32,7 @@ public:
     string directory;
     vector<Texture> textures_loaded;
     bool gammaCorrection;
-    Model(char *path);
+    Model(char *path, bool gamma = false);
     // ~Model();
     void draw(Shader &shader);
 };

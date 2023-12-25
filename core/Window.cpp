@@ -1,4 +1,6 @@
 #include "Window.h"
+// #define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 
@@ -52,7 +54,10 @@ void Window::createWindow()
         cout << "Failed to initialize GLAD" << endl;
     }
 
+    stbi_set_flip_vertically_on_load(true); //<- enable to flip the texture
+
     glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_ALWAYS);
 }
 
 GLFWwindow *Window::getWindow()

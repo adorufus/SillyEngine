@@ -17,7 +17,7 @@ void TextureLoader::loadTexture(const char *path, const string &directory, bool 
 
     glGenTextures(1, &texture);
 
-    unsigned char *data = stbi_load(path, &nWidth, &nHeight, &nrChannels, 0);
+    unsigned char *data = stbi_load(filename.c_str(), &nWidth, &nHeight, &nrChannels, 0);
 
     if (data)
     {
@@ -28,6 +28,8 @@ void TextureLoader::loadTexture(const char *path, const string &directory, bool 
             format = GL_RGB;
         else if (nrChannels == 4)
             format = GL_RGBA;
+        else 
+            format = GL_RGB;
 
         glBindTexture(GL_TEXTURE_2D, texture);
         glTexImage2D(GL_TEXTURE_2D, 0, format, nWidth, nHeight, 0, format, GL_UNSIGNED_BYTE, data);
@@ -45,8 +47,6 @@ void TextureLoader::loadTexture(const char *path, const string &directory, bool 
         cout << "Failed to load texture" << endl;
         stbi_image_free(data);
     }
-
-    stbi_set_flip_vertically_on_load(true);
 }
 
 unsigned int TextureLoader::getTexture()
