@@ -41,6 +41,9 @@
 // }
 
 #include <iostream>
+#include "imgui/imgui.h"
+#include "imgui/backends/imgui_impl_glfw.h"
+#include "imgui/backends/imgui_impl_opengl3.h"
 #include "glad/glad.h"
 #include <GLFW/glfw3.h>
 #include "core/Shader.h"
@@ -52,6 +55,7 @@
 #include "core/Window.h"
 #include "core/components/Camera.h"
 #include "core/Model.h"
+#include "core/experimental_vertices_model_loader.h"
 
 using namespace std;
 
@@ -64,62 +68,14 @@ bool firstMouse = true;
 float lastX = 800.0f / 2.0;
 float lastY = 600.0 / 2.0;
 
-float deltaTime = 0.0f;
+// float deltaTime = 0.0f;
 float lastFrame = 0.0f;
-float mvSpeed = 1.5f;
+
 
 glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
-void processInput(GLFWwindow *window)
-{
+Window windowInstance(800, 600, "Silly Engine", camera);
 
-    Input input(window);
-
-    if (input.getKeyPressed(KeyCode::esc))
-    {
-        glfwSetWindowShouldClose(window, true);
-    }
-
-    float camSpeed = mvSpeed * deltaTime;
-
-    if (input.getKeyPressed(KeyCode::SHIFT))
-    {
-        mvSpeed = 3.5f;
-    }
-    else
-    {
-        mvSpeed = 1.5f;
-    }
-
-    if (input.getKeyPressed(KeyCode::W))
-    {
-        camera.ProcessKeyboard(FORWARD, deltaTime);
-    }
-    if (input.getKeyPressed(KeyCode::S))
-    {
-        camera.ProcessKeyboard(BACKWARD, deltaTime);
-    }
-
-    if (input.getKeyPressed(KeyCode::A))
-    {
-        camera.ProcessKeyboard(LEFT, deltaTime);
-    }
-
-    if (input.getKeyPressed(KeyCode::D))
-    {
-        camera.ProcessKeyboard(RIGHT, deltaTime);
-    }
-
-    if (input.getKeyPressed(KeyCode::Q))
-    {
-        camera.ProcessKeyboard(DOWN, deltaTime);
-    }
-
-    if (input.getKeyPressed(KeyCode::E))
-    {
-        camera.ProcessKeyboard(UP, deltaTime);
-    }
-}
 
 void mouse_callback(GLFWwindow *window, double xposIn, double yposIn)
 {
@@ -150,137 +106,140 @@ void scroll_callback(GLFWwindow *window, double xoffset, double yoffset)
 int main()
 {
 
-    Window windowInstance(800, 600, "Silly Engine");
     windowInstance.setMouseCallback(mouse_callback, scroll_callback);
     windowInstance.initialize();
     Input input(windowInstance.getWindow());
 
-    GLFWwindow *window = windowInstance.getWindow();
+    // GLFWwindow *window = windowInstance.getWindow();
 
-    float vertices[] = {
-        // positions          // normals           // texture coords
-        -0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f,
-        0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f,
-        0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 1.0f,
-        0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 1.0f,
-        -0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f,
-        -0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f,
+    float planeVertices[] = {
+        // positions          // texture Coords (note we set these higher than 1 (together with GL_REPEAT as texture wrapping mode). this will cause the floor texture to repeat)
+        5.0f, -0.5f, 5.0f, 2.0f, 0.0f,
+        -5.0f, -0.5f, 5.0f, 0.0f, 0.0f,
+        -5.0f, -0.5f, -5.0f, 0.0f, 2.0f,
 
-        -0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
-        0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-        0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-        0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
-        -0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
-        -0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
+        5.0f, -0.5f, 5.0f, 2.0f, 0.0f,
+        -5.0f, -0.5f, -5.0f, 0.0f, 2.0f,
+        5.0f, -0.5f, -5.0f, 2.0f, 2.0f};
 
-        -0.5f, 0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
-        -0.5f, 0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 1.0f, 1.0f,
-        -0.5f, -0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
-        -0.5f, -0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
-        -0.5f, -0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
-        -0.5f, 0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+    float quadVertices[] = {
+        -1.0f, 1.0f, 0.0f, 1.0f,
+        -1.0f, -1.0f, 0.0f, 0.0f,
+        1.0f, -1.0f, 1.0f, 0.0f,
+        -1.0f, 1.0f, 0.0f, 1.0f,
+        1.0f, -1.0f, 1.0f, 0.0f,
+        1.0f, 1.0f, 1.0f, 1.0f};
 
-        0.5f, 0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
-        0.5f, 0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f,
-        0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
-        0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
-        0.5f, -0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
-        0.5f, 0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
-
-        -0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f,
-        0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 1.0f, 1.0f,
-        0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f,
-        0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f,
-        -0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f,
-        -0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f,
-
-        -0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
-        0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
-        0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
-        0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
-        -0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
-        -0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f};
-    // positions all containers
-    glm::vec3 cubePositions[] = {
-        glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(2.0f, 5.0f, -15.0f),
-        glm::vec3(-1.5f, -2.2f, -2.5f),
-        glm::vec3(-3.8f, -2.0f, -12.3f),
-        glm::vec3(2.4f, -0.4f, -3.5f),
-        glm::vec3(-1.7f, 3.0f, -7.5f),
-        glm::vec3(1.3f, -2.0f, -2.5f),
-        glm::vec3(1.5f, 2.0f, -2.5f),
-        glm::vec3(1.5f, 0.2f, -1.5f),
-        glm::vec3(-1.3f, 1.0f, -1.5f)};
+    Experimental_vertices_model_loader planePrimitive;
 
     // compile shaders section
 
     // Shader ourShader("assets/shaders/basic.vs", "assets/shaders/basic.fs");
     Shader ourShader("assets/shaders/vertexShader.vs", "assets/shaders/fragmentShader.vs");
     Shader lightingShader("assets/shaders/lightingShader.vs", "assets/shaders/lightingShader.fs");
+    Shader stencilShader("asssets/shaders/stencil.vs", "assets/shaders/stencil.fs");
+    Shader framebufferShader("asssets/shaders/screenFramebuffer.vs", "assets/shaders/screenFramebuffer.fs");
     Model firstModel("assets/models/backpack.obj");
 
-    unsigned int lightCubeVAO, VBO;
-    glGenVertexArrays(1, &lightCubeVAO);
-    glGenBuffers(1, &VBO);
-    glBindVertexArray(lightCubeVAO);
-
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void *)0);
+    unsigned int quadVAO, quadVBO;
+    glGenVertexArrays(1, &quadVAO);
+    glGenBuffers(1, &quadVBO);
+    glBindVertexArray(quadVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, quadVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(quadVertices), &quadVertices, GL_STATIC_DRAW);
     glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void *)0);
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void *)(2 * sizeof(float)));
+
+    framebufferShader.use();
+    framebufferShader.setInt("screenTexture", 0);
+
+    size_t vertSize = sizeof(planeVertices) / sizeof(planeVertices[0]);
+    planePrimitive.init(planeVertices, vertSize);
+
+    windowInstance.run();
+
+    // windowInstance.setupFramebuffer();
+
+    // bool showDemo = true;
 
     // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-    while (!windowInstance.shouldClose())
-    {
+    // while (!windowInstance.shouldClose())
+    // {
 
-        float currentFrame = glfwGetTime();
-        deltaTime = currentFrame - lastFrame;
-        lastFrame = currentFrame;
+    //     float currentFrame = glfwGetTime();
+    //     deltaTime = currentFrame - lastFrame;
+    //     lastFrame = currentFrame;
 
-        // input proses
-        processInput(window);
+    //     // input proses
+    //     processInput(window);
 
-        // rendering proses
-        windowInstance.clear();
+    //     // windowInstance.bindFramebuffer();
+    //     // glEnable(GL_DEPTH_TEST);
 
-        ourShader.use();
+    //     // rendering proses
+    //     windowInstance.clear();
 
-        ourShader.setVec3("light.position", -0.2f, -1.0f, -0.3f);
-        ourShader.setVec3("viewPos", camera.Position);
+    //     ourShader.use();
 
-        // light properties
-        ourShader.setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
-        ourShader.setVec3("light.diffuse", 0.5f, 0.5f, 0.5f);
-        ourShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
+    //     ourShader.setVec3("light.position", -0.2f, -1.0f, -0.3f);
+    //     ourShader.setVec3("viewPos", camera.Position);
 
-        ourShader.setFloat("material.shininess", 32.0f);
+    //     // light properties
+    //     ourShader.setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
+    //     ourShader.setVec3("light.diffuse", 0.5f, 0.5f, 0.5f);
+    //     ourShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
 
-        glm::mat4 model = glm::mat4(1.0f);
-        glm::mat4 view = glm::mat4(1.0f);
-        glm::mat4 projection = glm::mat4(1.0f);
-        // glm::mat4 transform = glm::mat4(1.0f);
+    //     ourShader.setFloat("material.shininess", 32.0f);
 
-        projection = glm::perspective(glm::radians(camera.Zoom), 800.0f / 600.0f, 0.1f, 100.0f);
-        view = camera.GetViewMatrix();
+    //     glm::mat4 model = glm::mat4(1.0f);
+    //     glm::mat4 view = glm::mat4(1.0f);
+    //     glm::mat4 projection = glm::mat4(1.0f);
+    //     // glm::mat4 transform = glm::mat4(1.0f);
 
-        ourShader.setMat4("projection", projection);
-        ourShader.setMat4("view", view);
+    //     projection = glm::perspective(glm::radians(camera.Zoom), 800.0f / 600.0f, 0.1f, 100.0f);
+    //     view = camera.GetViewMatrix();
 
-        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-        model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
-        ourShader.setMat4("model", model);
-        firstModel.draw(ourShader);
+    //     ourShader.setMat4("projection", projection);
+    //     ourShader.setMat4("view", view);
 
-        windowInstance.swapBuffers();
-        windowInstance.poolEvents();
-    }
+    //     model = glm::translate(model, glm::vec3(0.0f, 1.8f, 0.0f));
+    //     model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+    //     ourShader.setMat4("model", model);
+    //     firstModel.draw(ourShader);
 
-    glDeleteVertexArrays(1, &lightCubeVAO);
-    glDeleteBuffers(1, &VBO);
+    //     // glDisable(GL_DEPTH_TEST);
 
-    glfwTerminate();
+    //     // glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
+    //     // glStencilMask(0x00);
+    //     // glDisable(GL_DEPTH_TEST);
+    //     // stencilShader.use();
+
+    //     planePrimitive.update(ourShader);
+
+    //     // windowInstance.unbindFramebuffer();
+    //     // glDisable(GL_DEPTH_TEST); // disable depth test so screen-space quad isn't discarded due to depth test.
+    //     // clear all relevant buffers
+    //     // glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // set clear color to white (not really necessary actually, since we won't be able to see behind the quad anyways)
+    //     // glClear(GL_COLOR_BUFFER_BIT);
+
+    //     // framebufferShader.use();
+    //     // glBindVertexArray(quadVAO);
+    //     // glBindTexture(GL_TEXTURE_2D, windowInstance.getFramebufferTexture());
+    //     // glDrawArrays(GL_TRIANGLES, 0, 6);
+
+    //     // glStencilMask(0xFF);
+    //     // glStencilFunc(GL_ALWAYS, 0, 0xFF);
+    //     // glEnable(GL_DEPTH_TEST);
+
+    //     windowInstance.update(deltaTime);
+    // }
+
+    glDeleteVertexArrays(1, &quadVAO);
+    glDeleteBuffers(1, &quadVBO);
+
+    planePrimitive.cleanup();
     return 0;
 }

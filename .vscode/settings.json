@@ -66,6 +66,7 @@
         "set": "cpp",
         "type_traits": "cpp",
         "cinttypes": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "memory_resource": "cpp"
     }
 }
