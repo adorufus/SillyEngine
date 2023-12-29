@@ -57,7 +57,7 @@ void Window::createWindow()
     stbi_set_flip_vertically_on_load(true); //<- enable to flip the texture
 
     glEnable(GL_DEPTH_TEST);
-    glDepthFunc(GL_ALWAYS);
+    // glDepthFunc(GL_ALWAYS);
 }
 
 GLFWwindow *Window::getWindow()
