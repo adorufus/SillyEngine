@@ -28,111 +28,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5547db0c-c261-4883-bf1b-c1d4d68dab28" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Silly/vendor/osx/assimp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/build_windows.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/build_xcode.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sillitor/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Sillitor/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/src/ImGuiLayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/src/ImGuiLayer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/src/ImGuiLayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/src/ImGuiLayer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/src/ImageLoader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/src/ImageLoader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/src/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/src/Window.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/src/Window.h" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/src/Window.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/AssertHandler.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Base64.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/BaseImporter.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Bitmap.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/BlobIOSystem.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/ByteSwapper.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/ColladaMetaData.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Compiler/poppack1.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Compiler/pstdint.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Compiler/pushpack1.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/CreateAnimMesh.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/DefaultIOStream.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/DefaultIOSystem.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/DefaultLogger.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Exceptional.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Exporter.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/GenericProperty.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/GltfMaterial.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Hash.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/IOStream.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/IOStreamBuffer.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/IOSystem.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Importer.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/LineSplitter.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/LogAux.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/LogStream.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Logger.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/MathFunctions.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/MemoryIOWrapper.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/NullLogger.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/ObjMaterial.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/ParsingUtils.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Profiler.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/ProgressHandler.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/RemoveComments.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/SGSpatialSort.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/SceneCombiner.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/SkeletonMeshBuilder.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/SmallVector.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/SmoothingGroups.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/SmoothingGroups.inl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/SpatialSort.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/StandardShapes.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/StreamReader.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/StreamWriter.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/StringComparison.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/StringUtils.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Subdivision.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/TinyFormatter.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Vertex.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/XMLTools.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/XmlParser.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/ZipArchiveIOSystem.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/aabb.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/ai_assert.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/anim.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/camera.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/cexport.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/cfileio.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/cimport.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/color4.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/color4.inl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/commonMetaData.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/config.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/defs.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/fast_atof.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/importerdesc.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/lib/libassimp.5.3.0.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/light.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/material.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/material.inl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/matrix3x3.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/matrix3x3.inl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/matrix4x4.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/matrix4x4.inl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/mesh.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/metadata.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/pbrmaterial.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/postprocess.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/qnan.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/quaternion.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/quaternion.inl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/scene.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/texture.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/types.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/vector2.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/vector2.inl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/vector3.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/vector3.inl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/version.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/stb_image/stb_image.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/imgui" beforeDir="false" afterPath="$PROJECT_DIR$/includes/imgui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/imgui/.gitattributes" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/imgui/.github/FUNDING.yml" beforeDir="false" />
@@ -251,6 +147,7 @@
       <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_opengl3/build_win32.bat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_opengl3/example_win32_opengl3.vcxproj" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_opengl3/example_win32_opengl3.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/build_windows.bat" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/build_windows.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -348,6 +245,9 @@
         <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 8
@@ -506,7 +406,7 @@
       <updated>1702735437432</updated>
       <workItem from="1702735441058" duration="547000" />
       <workItem from="1702735994959" duration="3768000" />
-      <workItem from="1704184936612" duration="3097000" />
+      <workItem from="1704184936612" duration="4377000" />
     </task>
     <servers />
   </component>
