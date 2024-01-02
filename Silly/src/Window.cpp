@@ -49,6 +49,8 @@ void Window::initialize()
 void Window::createWindow()
 {
     std::cout << "Device screen resolution: " << ScreenResUtil::getScreenRes().width << ":" << ScreenResUtil::getScreenRes().height << std::endl;
+    nWidth = ScreenResUtil::getScreenRes().width;
+    nHeight = ScreenResUtil::getScreenRes().height;
     nWindow = glfwCreateWindow(1280, 800, "Silly Engine", NULL, NULL);
 
     if (nWindow == NULL)
@@ -80,6 +82,14 @@ void Window::createWindow()
     // glStencilMask(0x00);
     // glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
     // glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
+}
+
+int Window::getScreenWidth() {
+    return nWidth;
+}
+
+int Window::getScreenHeight() {
+    return nHeight;
 }
 
 Framebuffer Window::getFramebuffer()

@@ -178,3 +178,4 @@ CTestTestfile.cmake
 _deps
 xcode_build
 windows_build
+clion_build

@@ -1,0 +1,3 @@
+[submodule "Silly/vendor/osx/assimp"]
+	path = Silly/vendor/osx/assimp
+	url = https://github.com/assimp/assimp

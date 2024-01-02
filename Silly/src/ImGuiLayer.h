@@ -8,6 +8,7 @@ class Window;
 class ImGuiLayer
 {
 private:
+    void setupDockingSpace();
 public:
     ImGuiLayer();
     void init(Window *window);

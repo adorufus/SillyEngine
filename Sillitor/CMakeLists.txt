@@ -10,8 +10,7 @@ add_executable(Sillitor
 target_link_libraries(Sillitor PRIVATE Silly)
 
 if(APPLE)
-    target_link_directories(Sillitor PRIVATE ${CMAKE_SOURCE_DIR}/Silly/vendor/osx/assimp/lib)
-    target_link_libraries(Sillitor PRIVATE libassimp.5.3.0.dylib)
+    
 endif()
 if(WIN32)
     target_link_directories(Sillitor PRIVATE ${CMAKE_SOURCE_DIR}/Silly/vendor/windows/assimp/lib)

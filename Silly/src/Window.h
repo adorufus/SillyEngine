@@ -39,6 +39,8 @@ public:
     void setupFramebuffer();
     void bindFramebuffer();
     void unbindFramebuffer();
+    int getScreenWidth();
+    int getScreenHeight();
     static void clear();
     void destroy();
     unsigned int getFramebufferTexture();

@@ -2,7 +2,12 @@
 #include "ImageLoader.h"
 
 #define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
+#ifdef __WINDOWS__
+    #include "stb_image.h"
+#endif
+#ifdef __APPLE__
+    #include "stb_image.h"
+#endif
 
 TextureLoader::TextureLoader()
 {
