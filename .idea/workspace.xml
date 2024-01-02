@@ -1,19 +1,257 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader"><![CDATA[{
+  "useNewFormat": true
+}]]></component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="rendering_engine" targetName="rendering_engine" />
+      <config projectName="SillyEngine" targetName="Sillitor" />
+      <config projectName="SillyEngine" targetName="glm" />
+      <config projectName="SillyEngine" targetName="update_mappings" />
+      <config projectName="SillyEngine" targetName="uninstall" />
+      <config projectName="SillyEngine" targetName="imgui" />
+      <config projectName="SillyEngine" targetName="glad" />
+      <config projectName="SillyEngine" targetName="glfw" />
+      <config projectName="SillyEngine" targetName="Silly" />
     </generated>
   </component>
   <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+      <configuration PROFILE_NAME="Debug" ENABLED="true" GENERATION_DIR="clion_build" CONFIG_NAME="Debug" GENERATION_OPTIONS="-G Ninja -DIGG_IMGUI_TAG=v1.90-docking" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5547db0c-c261-4883-bf1b-c1d4d68dab28" name="Default Changelist" comment="" />
-    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="5547db0c-c261-4883-bf1b-c1d4d68dab28" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Silly/vendor/osx/assimp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/build_windows.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/build_xcode.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sillitor/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Sillitor/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/src/ImGuiLayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/src/ImGuiLayer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/src/ImGuiLayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/src/ImGuiLayer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/src/ImageLoader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/src/ImageLoader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/src/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/src/Window.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/src/Window.h" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/src/Window.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/AssertHandler.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Base64.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/BaseImporter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Bitmap.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/BlobIOSystem.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/ByteSwapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/ColladaMetaData.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Compiler/poppack1.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Compiler/pstdint.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Compiler/pushpack1.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/CreateAnimMesh.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/DefaultIOStream.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/DefaultIOSystem.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/DefaultLogger.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Exceptional.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Exporter.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/GenericProperty.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/GltfMaterial.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Hash.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/IOStream.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/IOStreamBuffer.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/IOSystem.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Importer.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/LineSplitter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/LogAux.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/LogStream.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Logger.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/MathFunctions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/MemoryIOWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/NullLogger.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/ObjMaterial.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/ParsingUtils.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Profiler.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/ProgressHandler.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/RemoveComments.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/SGSpatialSort.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/SceneCombiner.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/SkeletonMeshBuilder.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/SmallVector.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/SmoothingGroups.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/SmoothingGroups.inl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/SpatialSort.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/StandardShapes.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/StreamReader.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/StreamWriter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/StringComparison.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/StringUtils.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Subdivision.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/TinyFormatter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/Vertex.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/XMLTools.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/XmlParser.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/ZipArchiveIOSystem.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/aabb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/ai_assert.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/anim.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/camera.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/cexport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/cfileio.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/cimport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/color4.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/color4.inl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/commonMetaData.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/config.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/defs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/fast_atof.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/importerdesc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/lib/libassimp.5.3.0.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/light.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/material.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/material.inl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/matrix3x3.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/matrix3x3.inl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/matrix4x4.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/matrix4x4.inl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/mesh.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/metadata.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/pbrmaterial.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/postprocess.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/qnan.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/quaternion.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/quaternion.inl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/scene.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/texture.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/types.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/vector2.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/vector2.inl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/vector3.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/vector3.inl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp/version.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/stb_image/stb_image.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui" beforeDir="false" afterPath="$PROJECT_DIR$/includes/imgui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/.github/FUNDING.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/.github/issue_template.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/.github/pull_request_template.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/.github/workflows/build.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/.github/workflows/scheduled.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/.github/workflows/static-analysis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_allegro5.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_allegro5.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_android.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_android.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_dx10.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_dx10.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_dx11.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_dx11.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_dx12.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_dx12.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_dx9.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_dx9.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_glut.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_glut.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_opengl2.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_opengl2.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_sdl2.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_sdl2.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_sdl3.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_sdl3.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_sdlrenderer2.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_sdlrenderer2.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_sdlrenderer3.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_sdlrenderer3.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_vulkan.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_vulkan.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_wgpu.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_wgpu.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_win32.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/backends/imgui_impl_win32.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_allegro5/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_allegro5/example_allegro5.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_allegro5/example_allegro5.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_allegro5/imconfig_allegro5.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_android_opengl3/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_android_opengl3/android/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_android_opengl3/android/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_android_opengl3/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_android_opengl3/android/app/src/main/java/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_android_opengl3/android/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_android_opengl3/android/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_android_opengl3/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_apple_opengl2/example_apple_opengl2.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_emscripten_wgpu/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_emscripten_wgpu/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_emscripten_wgpu/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_emscripten_wgpu/web/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_glfw_opengl2/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_glfw_opengl2/build_win32.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_glfw_opengl2/example_glfw_opengl2.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_glfw_opengl2/example_glfw_opengl2.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_glfw_vulkan/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_glfw_vulkan/build_win32.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_glfw_vulkan/build_win64.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_glfw_vulkan/example_glfw_vulkan.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_glfw_vulkan/example_glfw_vulkan.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_glut_opengl2/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_glut_opengl2/example_glut_opengl2.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_glut_opengl2/example_glut_opengl2.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_directx11/build_win32.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_directx11/example_sdl2_directx11.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_directx11/example_sdl2_directx11.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_metal/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_opengl2/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_opengl2/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_opengl2/build_win32.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_opengl2/example_sdl2_opengl2.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_opengl2/example_sdl2_opengl2.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_opengl3/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_opengl3/Makefile.emscripten" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_opengl3/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_opengl3/build_win32.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_opengl3/example_sdl2_opengl3.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_opengl3/example_sdl2_opengl3.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_sdlrenderer2/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_sdlrenderer2/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_sdlrenderer2/build_win32.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_sdlrenderer2/example_sdl2_sdlrenderer2.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_sdlrenderer2/example_sdl2_sdlrenderer2.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_sdlrenderer2/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_vulkan/build_win32.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_vulkan/example_sdl2_vulkan.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl2_vulkan/example_sdl2_vulkan.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl3_opengl3/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl3_opengl3/Makefile.emscripten" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl3_opengl3/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl3_opengl3/build_win32.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl3_opengl3/example_sdl3_opengl3.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl3_opengl3/example_sdl3_opengl3.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl3_sdlrenderer3/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl3_sdlrenderer3/build_win32.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl3_sdlrenderer3/example_sdl3_sdlrenderer3.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl3_sdlrenderer3/example_sdl3_sdlrenderer3.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_sdl3_sdlrenderer3/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_directx10/build_win32.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_directx10/example_win32_directx10.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_directx10/example_win32_directx10.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_directx11/build_win32.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_directx11/example_win32_directx11.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_directx11/example_win32_directx11.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_directx12/build_win32.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_directx12/example_win32_directx12.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_directx12/example_win32_directx12.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_directx9/build_win32.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_directx9/example_win32_directx9.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_directx9/example_win32_directx9.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_opengl3/build_win32.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_opengl3/example_win32_opengl3.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_opengl3/example_win32_opengl3.vcxproj.filters" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,6 +334,9 @@
       </file>
     </leaf>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -108,12 +349,16 @@
       </list>
     </option>
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="9" />
     <option name="y" value="44" />
     <option name="width" value="1262" />
     <option name="height" value="693" />
   </component>
+  <component name="ProjectId" id="2aOLybuR2yQBKrERYlX6nHRko4K" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -154,30 +399,83 @@
       </pane>
     </panes>
   </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="CMake Application.rendering_engine">
-    <configuration name="SillyRun" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="rendering_engine" TARGET_NAME="rendering_engine" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="rendering_engine" RUN_TARGET_NAME="rendering_engine">
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "CMake Application.Silly.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "/Users/Oktaviano/Development/rendering-engine",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "CMakeSettings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="CMake Application.Silly">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Sillitor" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SillyEngine" TARGET_NAME="Sillitor" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SillyEngine" RUN_TARGET_NAME="Sillitor">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="rendering_engine" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="rendering_engine" TARGET_NAME="rendering_engine" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="rendering_engine" RUN_TARGET_NAME="rendering_engine">
+    <configuration name="Silly" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SillyEngine" TARGET_NAME="Silly" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SillyEngine" RUN_TARGET_NAME="Sillitor">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SillyRun" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SillyEngine" TARGET_NAME="rendering_engine" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SillyEngine" RUN_TARGET_NAME="rendering_engine">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="glad" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SillyEngine" TARGET_NAME="glad" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="glfw" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SillyEngine" TARGET_NAME="glfw" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="glm" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SillyEngine" TARGET_NAME="glm" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="imgui" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SillyEngine" TARGET_NAME="imgui" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="rendering_engine" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SillyEngine" TARGET_NAME="rendering_engine" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SillyEngine" RUN_TARGET_NAME="rendering_engine">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="uninstall" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SillyEngine" TARGET_NAME="uninstall" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="update_mappings" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SillyEngine" TARGET_NAME="update_mappings" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -185,8 +483,17 @@
     <list>
       <item itemvalue="CMake Application.SillyRun" />
       <item itemvalue="CMake Application.rendering_engine" />
+      <item itemvalue="CMake Application.uninstall" />
+      <item itemvalue="CMake Application.glfw" />
+      <item itemvalue="CMake Application.update_mappings" />
+      <item itemvalue="CMake Application.glm" />
+      <item itemvalue="CMake Application.glad" />
+      <item itemvalue="CMake Application.imgui" />
+      <item itemvalue="CMake Application.Sillitor" />
+      <item itemvalue="CMake Application.Silly" />
     </list>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -199,6 +506,7 @@
       <updated>1702735437432</updated>
       <workItem from="1702735441058" duration="547000" />
       <workItem from="1702735994959" duration="3768000" />
+      <workItem from="1704184936612" duration="3097000" />
     </task>
     <servers />
   </component>
@@ -232,7 +540,12 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake">

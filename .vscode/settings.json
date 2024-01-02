@@ -55,6 +55,18 @@
         "unordered_map": "cpp",
         "variant": "cpp",
         "vector": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "iterator": "cpp",
+        "memory": "cpp",
+        "*.inc": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "__tree": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "type_traits": "cpp",
+        "cinttypes": "cpp",
+        "thread": "cpp",
+        "memory_resource": "cpp"
     }
 }

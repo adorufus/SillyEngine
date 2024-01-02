@@ -12,11 +12,19 @@
         "-fansi-escape-codes",
         "-g",
         "-I${workspaceFolder}/includes",
+        "-I${workspaceFolder}/includes/imgui",
+        "-I${workspaceFolder}/core",
+        "-I${workspaceFolder}/scenes",
         "-L${workspaceFolder}/libraries",
+        "${workspaceFolder}/includes/imgui/**.cpp",
+        "${workspaceFolder}/includes/imgui/backends/*.cpp",
         "${workspaceFolder}/core/*.cpp",
+        "${workspaceFolder}/scenes/*.cpp",
+        "${workspaceFolder}/core/components/*.cpp",
         "${workspaceFolder}/*.cpp",
         "${workspaceFolder}/glad.c",
         "${workspaceFolder}/libraries/libglfw.3.3.dylib",
+        "${workspaceFolder}/libraries/libassimp.5.3.0.dylib",
         // "${file}",
         "-o",
         "${workspaceFolder}/app",
@@ -30,7 +38,10 @@
         "CoreVideo",
         "-framework",
         "CoreFoundation",
-        "-Wno-deprecated"
+        "-framework",
+        "CoreGraphics",
+        "-Wno-deprecated",
+        // "-v"
       ],
       "options": {
         "cwd": "${fileDirname}"
