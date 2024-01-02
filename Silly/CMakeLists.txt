@@ -19,6 +19,7 @@ target_include_directories(Silly PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${CMAKE_CURRENT_SOURCE_DIR}/src/components
     ${CMAKE_CURRENT_SOURCE_DIR}/vendor/stb_image
+    ${CMAKE_CURRENT_SOURCE_DIR}/vendor
     ${CMAKE_SOURCE_DIR}/Sandbox
     # /opt/homebrew/Cellar
 )
@@ -34,7 +35,8 @@ if(APPLE)
     target_link_libraries(Silly PUBLIC ${ASSIMP_DIR}/build/bin/libassimp.5.3.0.dylib)
 endif()
 if(WIN32)
-    target_include_directories(Silly PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/vendor/windows/assimp)
+    #target_include_directories(Silly PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/vendor/windows/assimp)
+    
     target_link_libraries(Silly PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/vendor/windows/assimp/lib/assimp-vc143-mtd.lib)
 endif()
 

@@ -2,7 +2,7 @@
 #include "ImageLoader.h"
 
 #define STB_IMAGE_IMPLEMENTATION
-#ifdef __WINDOWS__
+#ifdef _WIN32
     #include "stb_image.h"
 #endif
 #ifdef __APPLE__
