@@ -2,9 +2,8 @@
 
 :: Check if CMake is installed
 where cmake >nul 2>nul
-if %ERRORLEVEL% equ 0 (
-    echo CMake found in %PATH%, building Silly Engine...
-) else (
+if %ERRORLEVEL% equ 0 echo CMake found in %PATH%, building Silly Engine...
+else (
     echo CMake is not installed. Downloading and installing CMake...
 
     :: Check PowerShell version
@@ -12,11 +11,13 @@ if %ERRORLEVEL% equ 0 (
     set /p ps_version=<temp_version.txt
     del temp_version.txt
 
+    for /f "delims=" %%v in ('powershell -command "(Invoke-WebRequest -Uri 'https://api.github.com/repos/Kitware/CMake/releases/latest').Content | ConvertFrom-Json | Select -ExpandProperty tag_name"') do set "CMAKE_VERSION=%%v"
+
     if %ps_version% geq 7 (
-        pwsh -Command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/Kitware/CMake/releases/latest/download/cmake-3.22.0-windows-x86_64.zip', 'C:\Temp\cmake.zip')"
+        pwsh -Command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/Kitware/CMake/releases/latest/download/cmake-%CMAKE_VERSION%-windows-x86_64.zip', 'C:\Temp\cmake.zip')"
         pwsh -Command "Expand-Archive -Path 'C:\Temp\cmake.zip' -DestinationPath 'C:\Temp\CMake'"
     ) else (
-        powershell -Command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/Kitware/CMake/releases/latest/download/cmake-3.22.0-windows-x86_64.zip', 'C:\Temp\cmake.zip')"
+        powershell -Command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/Kitware/CMake/releases/latest/download/cmake-%CMAKE_VERSION%-windows-x86_64.zip', 'C:\Temp\cmake.zip')"
         powershell -Command "Expand-Archive -Path 'C:\Temp\cmake.zip' -DestinationPath 'C:\Temp\CMake'"
     )
 
