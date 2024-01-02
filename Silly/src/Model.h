@@ -1,6 +1,6 @@
 #pragma once
 
-//#include <glad/gl.h>
+#include <glad/gl.h>
 #include <glm/gtc/matrix_transform.hpp>
 // #include "stb_image.h"
 #include <assimp/Importer.hpp>

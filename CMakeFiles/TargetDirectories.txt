@@ -1,5 +1,0 @@
-/Users/Oktaviano/Development/rendering-engine/CMakeFiles/SillyEngine.dir
-/Users/Oktaviano/Development/rendering-engine/CMakeFiles/STB_IMAGE.dir
-/Users/Oktaviano/Development/rendering-engine/CMakeFiles/GLAD.dir
-/Users/Oktaviano/Development/rendering-engine/CMakeFiles/edit_cache.dir
-/Users/Oktaviano/Development/rendering-engine/CMakeFiles/rebuild_cache.dir

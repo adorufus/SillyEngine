@@ -126,7 +126,7 @@ int main()
         1.0f, -1.0f, 1.0f, 0.0f,
         1.0f, 1.0f, 1.0f, 1.0f};
 
-    Experimental_vertices_model_loader planePrimitive;
+    //Experimental_vertices_model_loader planePrimitive;
 
     // compile shaders section
 
@@ -152,7 +152,7 @@ int main()
     framebufferShader.setInt("screenTexture", 0);
 
     size_t vertSize = sizeof(planeVertices) / sizeof(planeVertices[0]);
-    planePrimitive.init(planeVertices, vertSize);
+    //planePrimitive.init(planeVertices, vertSize);
 
     windowInstance.run();
 
@@ -236,6 +236,6 @@ int main()
     glDeleteVertexArrays(1, &quadVAO);
     glDeleteBuffers(1, &quadVBO);
 
-    planePrimitive.cleanup();
+    //planePrimitive.cleanup();
     return 0;
 }
