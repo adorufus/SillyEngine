@@ -5,7 +5,7 @@ set "CMAKE_VERSION=%CMAKE_VERSION:~1%"
 
 :: Check if CMake is installed
 where cmake >nul 2>nul
-if %ERRORLEVEL% equ 0 echo CMake found, building Silly Engine... 
+if %ERRORLEVEL% equ 0 echo CMake found, building Silly Engine... & goto generate
 if %ERRORLEVEL% geq 1 goto install
 
 :install
@@ -59,7 +59,7 @@ goto generate
 mkdir ..\windows_build 2>nul
 
 :: Generate Visual Studio 2017 2022 project
-cmake -G "Visual Studio 16 2019" -S .. -B ../windows_build
+cmake -G "Visual Studio 17 2022" -S .. -B ../windows_build
 
 echo Visual Studio 2022 project generated!
 
