@@ -214,7 +214,7 @@ FT_BEGIN_HEADER
    *   without linking conflicts.
    *
    *   Do not `#undef` this macro here since the build system might define
-   *   it for certain configurations only.
+   *   it for certain configuration only.
    *
    *   If you use a build system like cmake or the `configure` script,
    *   options set by those programs have precedence, overwriting the value
@@ -428,7 +428,7 @@ FT_BEGIN_HEADER
    *   Don't define any of these macros to compile in 'release' mode!
    *
    *   Do not `#undef` these macros here since the build system might define
-   *   them for certain configurations only.
+   *   them for certain configuration only.
    */
 /* #define FT_DEBUG_LEVEL_ERROR */
 /* #define FT_DEBUG_LEVEL_TRACE */
@@ -487,7 +487,7 @@ FT_BEGIN_HEADER
    *   variables and macros should be used.
    *
    *   Do not `#undef` these macros here since the build system might define
-   *   them for certain configurations only.
+   *   them for certain configuration only.
    */
 /* #define FT_DEBUG_AUTOFIT */
 
@@ -505,7 +505,7 @@ FT_BEGIN_HEADER
    *   the _environment_ variable `FT2_DEBUG_MEMORY` is defined also!
    *
    *   Do not `#undef` this macro here since the build system might define it
-   *   for certain configurations only.
+   *   for certain configuration only.
    */
 /* #define FT_DEBUG_MEMORY */
 
@@ -645,7 +645,7 @@ FT_BEGIN_HEADER
    * TrueType glyphs without hinting.
    *
    * Do not `#undef` this macro here, since the build system might define it
-   * for certain configurations only.
+   * for certain configuration only.
    */
 #define TT_CONFIG_OPTION_BYTECODE_INTERPRETER
 

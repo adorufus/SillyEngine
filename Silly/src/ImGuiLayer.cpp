@@ -5,22 +5,20 @@
 
 Window *mWindow = NULL;
 
-ImGuiLayer::ImGuiLayer()
-{
+ImGuiLayer::ImGuiLayer() {
 }
 
-void ImGuiLayer::init(Window *window)
-{
+void ImGuiLayer::init(Window *window) {
 
     // assert (mWindow == nullptr && "Window is null");
     mWindow = window;
 
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
-    
+
 
     ImGuiIO &imGuiIo = ImGui::GetIO();
-    (void)imGuiIo;
+    (void) imGuiIo;
 
     imGuiIo.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard; // Enable Keyboard Controls
     imGuiIo.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;  // Enable Gamepad Controls
@@ -28,10 +26,9 @@ void ImGuiLayer::init(Window *window)
     imGuiIo.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
 
     ImGui::StyleColorsDark();
-    
+
     ImGuiStyle &style = ImGui::GetStyle();
-    if (imGuiIo.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
-    {
+    if (imGuiIo.ConfigFlags & ImGuiConfigFlags_ViewportsEnable) {
         style.WindowRounding = 0.0f;
         style.Colors[ImGuiCol_WindowBg].w = 1.0f;
     }
@@ -45,39 +42,39 @@ void ImGuiLayer::setupDockingSpace() {
     static bool opt_fullscreen = true;
     static bool opt_padding = false;
     static ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None;
-    
+
     ImGuiWindowFlags windowFlags = ImGuiWindowFlags_NoDocking;
 
-#ifdef __WINDOWS__
+#ifdef _WIN32
     windowFlags |= ImGuiWindowFlags_MenuBar;
 #endif
-    
-    if(opt_fullscreen) {
+
+    if (opt_fullscreen) {
         const ImGuiViewport *viewport = ImGui::GetMainViewport();
-        
+
         ImGui::SetNextWindowPos(viewport->WorkPos);
         ImGui::SetNextWindowSize(viewport->WorkSize);
         ImGui::SetNextWindowViewport(viewport->ID);
         ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
         ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
-        windowFlags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove;
+        windowFlags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize |
+                       ImGuiWindowFlags_NoMove;
         windowFlags |= ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
-    }
-    else {
+    } else {
         dockspace_flags &= ~ImGuiDockNodeFlags_PassthruCentralNode;
     }
-    
-    if(dockspace_flags & ImGuiDockNodeFlags_PassthruCentralNode) {
+
+    if (dockspace_flags & ImGuiDockNodeFlags_PassthruCentralNode) {
         windowFlags |= ImGuiWindowFlags_NoBackground;
     }
-    
+
     bool showWindow = true;
-    
+
     if (!opt_padding)
         ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
-    
+
     ImGui::Begin("Silly Editor", &showWindow, windowFlags);
-    
+
     if (!opt_padding)
         ImGui::PopStyleVar();
 
@@ -85,29 +82,25 @@ void ImGuiLayer::setupDockingSpace() {
         ImGui::PopStyleVar(2);
 
     // Submit the DockSpace
-    ImGuiIO& io = ImGui::GetIO();
-    if (io.ConfigFlags & ImGuiConfigFlags_DockingEnable)
-    {
+    ImGuiIO &io = ImGui::GetIO();
+    if (io.ConfigFlags & ImGuiConfigFlags_DockingEnable) {
         ImGuiID dockspace_id = ImGui::GetID("MyDockSpace");
         ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags);
-    }
-    else
-    {
+    } else {
 //        ShowDockingDisabledMessage();
     }
-    
+
 }
 
-void ImGuiLayer::update(float deltaTime)
-{
+void ImGuiLayer::update(float deltaTime) {
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
     bool showDemo = false;
-    
+
     ImGuiIO &imGuiIo = ImGui::GetIO();
-    (void)imGuiIo;
-    
+    (void) imGuiIo;
+
 //    imGuiIo.DisplaySize.x = mWindow->getScreenWidth();
 //    imGuiIo.DisplaySize.y = mWindow->getScreenHeight();
 //    imGuiIo.DisplayFramebufferScale.x = 1.0f;
@@ -116,25 +109,45 @@ void ImGuiLayer::update(float deltaTime)
 //    int imguiCursor = ImGui::GetMouseCursor();
 ////    glfwSetCursor(mWindow->getWindow(), mouseCursors)
 //    glfwSetInputMode(mWindow->getWindow(), GLFW_CURSOR, GLFW_CURSOR_NORMAL);
-    
+
     setupDockingSpace();
 
-        ImGui::ShowDemoWindow(&showDemo);
-    
-        ImGui::Begin("Debug console");
-        ImGui::Text("delta Time: %f", deltaTime);
-        ImGui::End();
-    
-        ImGui::Begin("Workspace");
-        ImGui::Text("This is workspace");
-        ImGui::End();
-     ImGui::End();
+    ImGui::ShowDemoWindow(&showDemo);
+
+    ImGui::Begin("Scene", NULL,
+                 ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_DockNodeHost | ImGuiWindowFlags_NoCollapse |
+                 ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse);
+
+    ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(0.0f, 0.0f));
+    ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 0.0f);
+    ImGui::PushStyleVar(ImGuiStyleVar_FrameBorderSize, 0.0f);
+    ImGui::PopStyleVar(3);
+    auto viewportMinRegion = ImGui::GetWindowContentRegionMin();
+    auto viewportMaxRegion = ImGui::GetWindowContentRegionMax();
+    auto viewportOffset = ImGui::GetWindowPos();
+
+    ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
+
+    ImVec2 wSize = ImGui::GetWindowSize();
+
+    ImGui::Image(reinterpret_cast<void *>(mWindow->getFramebufferTexture()),
+                 ImVec2(viewportPanelSize.x, viewportPanelSize.y), ImVec2(0, 1), ImVec2(1, 0));
+
+    ImGui::End();
+
+    ImGui::Begin("Debug console");
+    ImGui::Text("delta Time: %f", deltaTime);
+    ImGui::End();
+
+    ImGui::Begin("Workspace");
+    ImGui::Text("This is workspace");
+    ImGui::End();
+    ImGui::End();
 
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-    
-    if (imGuiIo.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
-    {
+
+    if (imGuiIo.ConfigFlags & ImGuiConfigFlags_ViewportsEnable) {
         GLFWwindow *backupCurrentContext = glfwGetCurrentContext();
         ImGui::UpdatePlatformWindows();
         ImGui::RenderPlatformWindowsDefault();
@@ -142,8 +155,7 @@ void ImGuiLayer::update(float deltaTime)
     }
 }
 
-void ImGuiLayer::destroy()
-{
+void ImGuiLayer::destroy() {
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();

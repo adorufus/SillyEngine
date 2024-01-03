@@ -1,7 +1,7 @@
 # Silly/CMakeLists.txt
 
 # Get all source files in the current directory
-file(GLOB SILLY_SOURCES "src/*.cpp" "src/*.h" "src/components/*.cpp" "src/components/*.h" "${CMAKE_SOURCE_DIR}/Sandbox/*.cpp" "${CMAKE_SOURCE_DIR}/Sandbox/*.h")
+file(GLOB SILLY_SOURCES "src/*.cpp" "src/*.h" "src/ECS/*.cpp" "src/ECS/*.h" "src/components/*.cpp" "src/components/*.h" "${CMAKE_SOURCE_DIR}/Sandbox/*.cpp" "${CMAKE_SOURCE_DIR}/Sandbox/*.h")
 
 include(FetchContent)
 
@@ -18,11 +18,17 @@ FetchContent_MakeAvailable(imgui-glfw-glad-glm)
 target_include_directories(Silly PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${CMAKE_CURRENT_SOURCE_DIR}/src/components
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ECS
     ${CMAKE_CURRENT_SOURCE_DIR}/vendor/stb_image
-    ${CMAKE_CURRENT_SOURCE_DIR}/vendor
     ${CMAKE_SOURCE_DIR}/Sandbox
     # /opt/homebrew/Cellar
 )
+
+add_custom_target(copy_res_directory ALL
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        "${CMAKE_SOURCE_DIR}/assets" "${CMAKE_CURRENT_BINARY_DIR}/assets"
+        COMMENT "Copy assets directory to build tree"
+        VERBATIM)
 
 
 

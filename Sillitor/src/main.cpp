@@ -52,6 +52,7 @@
 #include "Input.h"
 #include "components/Camera.h"
 #include "Model.h"
+#include "assets_directory.h"
 
 using namespace std;
 
@@ -130,12 +131,12 @@ int main()
 
     // compile shaders section
 
-    // Shader ourShader("assets/shaders/basic.vs", "assets/shaders/basic.fs");
-    Shader ourShader("assets/shaders/vertexShader.vs", "assets/shaders/fragmentShader.vs");
-    Shader lightingShader("assets/shaders/lightingShader.vs", "assets/shaders/lightingShader.fs");
-    Shader stencilShader("asssets/shaders/stencil.vs", "assets/shaders/stencil.fs");
-    Shader framebufferShader("asssets/shaders/screenFramebuffer.vs", "assets/shaders/screenFramebuffer.fs");
-    Model firstModel("assets/models/backpack.obj");
+    // Shader ourShader(SHADER_DIR "/shaders/basic.vs", SHADER_DIR "/shaders/basic.fs");
+    Shader ourShader(SHADER_DIR "/shaders/vertexShader.vs", SHADER_DIR "/shaders/fragmentShader.vs");
+    Shader lightingShader(SHADER_DIR "/shaders/lightingShader.vs", SHADER_DIR "/shaders/lightingShader.fs");
+    Shader stencilShader(SHADER_DIR "/shaders/stencil.vs", SHADER_DIR "/shaders/stencil.fs");
+    Shader framebufferShader(SHADER_DIR  "/shaders/screenFramebuffer.vs", SHADER_DIR "/shaders/screenFramebuffer.fs");
+    Model firstModel(SHADER_DIR "/models/backpack.obj");
 
     unsigned int quadVAO, quadVBO;
     glGenVertexArrays(1, &quadVAO);

@@ -3,9 +3,9 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
   <component name="CMakeReloadState">
     <option name="reloaded" value="true" />
   </component>
@@ -19,6 +19,7 @@
       <config projectName="SillyEngine" targetName="glad" />
       <config projectName="SillyEngine" targetName="glfw" />
       <config projectName="SillyEngine" targetName="Silly" />
+      <config projectName="SillyEngine" targetName="copy_res_directory" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -28,7 +29,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5547db0c-c261-4883-bf1b-c1d4d68dab28" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Silly/src/ECS/ECS.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Silly/src/ECS/ECS.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configuration/assets_directory.h.in" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configuration/root_directory.h.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sillitor/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Sillitor/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/src/FileSystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/src/FileSystem.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/src/ImGuiLayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/src/ImGuiLayer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/src/Shader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/src/Shader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/vendor/osx/assimp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/vendor/windows/assimp/cexport.h" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/vendor/windows/assimp/cexport.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.dSYM/Contents/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.dSYM/Contents/Resources/DWARF/app" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.dSYM/Contents/Resources/Relocations/aarch64/app.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/shaders/screenFramebuffer.vs" beforeDir="false" afterPath="$PROJECT_DIR$/assets/shaders/screenFramebuffer.vs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/glad.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/freetype2/freetype/config/ftoption.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/freetype2/freetype/config/ftoption.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/imgui" beforeDir="false" afterPath="$PROJECT_DIR$/includes/imgui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/imgui/.gitattributes" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/imgui/.github/FUNDING.yml" beforeDir="false" />
@@ -147,7 +168,7 @@
       <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_opengl3/build_win32.bat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_opengl3/example_win32_opengl3.vcxproj" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/imgui/examples/example_win32_opengl3/example_win32_opengl3.vcxproj.filters" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/build_windows.bat" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/build_windows.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stb_image.cpp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,9 +270,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="9" />
     <option name="y" value="44" />
@@ -303,33 +324,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "CMake Application.Silly.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "last_opened_file_path": "/Users/Oktaviano/Development/rendering-engine",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "CMakeSettings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;CMake Application.Sillitor.executor&quot;: &quot;Run&quot;,
+    &quot;CMake Application.Silly.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/Oktaviano/Development/rendering-engine&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CMakeSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="CMake Application.Silly">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
+}</component>
+  <component name="RunManager" selected="CMake Application.Sillitor">
     <configuration name="Sillitor" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SillyEngine" TARGET_NAME="Sillitor" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SillyEngine" RUN_TARGET_NAME="Sillitor">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -341,6 +358,11 @@
       </method>
     </configuration>
     <configuration name="SillyRun" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SillyEngine" TARGET_NAME="rendering_engine" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SillyEngine" RUN_TARGET_NAME="rendering_engine">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="copy_res_directory" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SillyEngine" TARGET_NAME="copy_res_directory" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -381,16 +403,17 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="CMake Application.Sillitor" />
       <item itemvalue="CMake Application.SillyRun" />
+      <item itemvalue="CMake Application.Silly" />
+      <item itemvalue="CMake Application.copy_res_directory" />
+      <item itemvalue="CMake Application.glad" />
+      <item itemvalue="CMake Application.glfw" />
+      <item itemvalue="CMake Application.glm" />
+      <item itemvalue="CMake Application.imgui" />
       <item itemvalue="CMake Application.rendering_engine" />
       <item itemvalue="CMake Application.uninstall" />
-      <item itemvalue="CMake Application.glfw" />
       <item itemvalue="CMake Application.update_mappings" />
-      <item itemvalue="CMake Application.glm" />
-      <item itemvalue="CMake Application.glad" />
-      <item itemvalue="CMake Application.imgui" />
-      <item itemvalue="CMake Application.Sillitor" />
-      <item itemvalue="CMake Application.Silly" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -407,6 +430,7 @@
       <workItem from="1702735441058" duration="547000" />
       <workItem from="1702735994959" duration="3768000" />
       <workItem from="1704184936612" duration="4377000" />
+      <workItem from="1704265915288" duration="2000" />
     </task>
     <servers />
   </component>
