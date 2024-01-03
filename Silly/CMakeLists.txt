@@ -5,6 +5,8 @@ file(GLOB SILLY_SOURCES "src/*.cpp" "src/*.h" "src/ECS/*.cpp" "src/ECS/*.h" "src
 
 include(FetchContent)
 
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules/")
+
 # Define the SILLY library using the detected source files
 add_library(Silly STATIC ${SILLY_SOURCES})
 
@@ -41,10 +43,23 @@ if(APPLE)
     target_link_libraries(Silly PUBLIC ${ASSIMP_DIR}/build/bin/libassimp.5.3.0.dylib)
 endif()
 
+link_directories(${CMAKE_SOURCE_DIR}/Silly/vendor/windows)
+
+find_package(ASSIMP REQUIRED)
+message(STATUS "found assimp in" ${ASSIMP_INCLUDE_DIR})
+
 if(WIN32)
-    target_include_directories(Silly PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/vendor/windows/assimp)
+    # target_include_directories(Silly PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/vendor/windows/assimp)
     
-    target_link_libraries(Silly PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/vendor/windows/assimp/lib/assimp-vc143-mtd.lib)
+    # target_link_libraries(Silly PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/vendor/windows/assimp/lib/assimp-vc143-mtd.lib)
+
+    set(LIBS assimp)
+    add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+    target_include_directories(Silly PUBLIC ${ASSIMP_INCLUDE_DIR})
+    configure_file(
+        ${CMAKE_CURRENT_SOURCE_DIR}/vendor/windows/assimp/config.h.in
+        ${CMAKE_CURRENT_SOURCE_DIR}/vendor/windows/assimp/config.h
+    )
 endif()
 
-target_link_libraries(Silly PUBLIC glfw imgui glad glm)
+target_link_libraries(Silly PUBLIC ${LIBS} glfw imgui glad glm)

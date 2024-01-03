@@ -126,13 +126,16 @@ void ImGuiLayer::update(float deltaTime) {
     auto viewportMaxRegion = ImGui::GetWindowContentRegionMax();
     auto viewportOffset = ImGui::GetWindowPos();
 
+    ImGui::Text("Test aja ini mah");
+
     ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
 
     ImVec2 wSize = ImGui::GetWindowSize();
 
     ImGui::Image(reinterpret_cast<void *>(mWindow->getFramebufferTexture()),
                  ImVec2(viewportPanelSize.x, viewportPanelSize.y), ImVec2(0, 1), ImVec2(1, 0));
-
+    
+        
     ImGui::End();
 
     ImGui::Begin("Debug console");

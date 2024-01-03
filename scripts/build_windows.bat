@@ -59,7 +59,7 @@ goto generate
 mkdir ..\windows_build 2>nul
 
 :: Generate Visual Studio 2017 2022 project
-cmake -G "Visual Studio 17 2022" -S .. -B ../windows_build
+cmake -G "Visual Studio 17 2022" -S .. -B ../windows_build -DIGG_IMGUI_TAG=v1.90-docking
 
 echo Visual Studio 2022 project generated!
 
@@ -71,9 +71,9 @@ echo Building completed!
 echo Copying dynamic library....
 
 :: Check if the file exists before copying
-if exist "..\windows_build\Silliter\Debug\" (
+if exist "..\windows_build\Sillitor\Debug\" (
     :: Copy the file
-    copy "..\Silly\vendor\windows\assimp\lib\assimp-vc143-mtd.lib" "..\windows_build\Silliter\Debug\"
+    copy "..\Silly\vendor\windows\assimp\lib\assimp-vc143-mtd.dll" "..\windows_build\Sillitor\Debug\"
 ) else (
     echo Destination directory not found.
 )
