@@ -9,6 +9,8 @@ Shader::Shader(const char *vertexPath, const char *fragmentPath, const char *geo
     ifstream fShaderFile;
     ifstream gShaderFile;
 
+    std::cout << vertexPath << std::endl;
+
     // ensure ifstream object can throw exceptions
     vShaderFile.exceptions(ifstream::failbit | ifstream::badbit);
     fShaderFile.exceptions(ifstream::failbit | ifstream::badbit);

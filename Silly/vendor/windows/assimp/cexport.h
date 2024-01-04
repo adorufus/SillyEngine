@@ -190,7 +190,7 @@ ASSIMP_API aiReturn aiExportSceneEx(const C_STRUCT aiScene *pScene,
 // --------------------------------------------------------------------------------
 /** Describes a blob of exported scene data. Use #aiExportSceneToBlob() to create a blob containing an
 * exported scene. The memory referred by this structure is owned by Assimp.
-* to free its resources. Don't try to free the memory on your side - it will crash for most build configurations
+* to free its resources. Don't try to free the memory on your side - it will crash for most build configuration
 * due to conflicting heaps.
 *
 * Blobs can be nested - each blob may reference another blob, which may in turn reference another blob and so on.
