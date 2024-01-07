@@ -19,20 +19,23 @@
 
 using namespace std;
 
+class Texture;
+
 class Model
 {
 private:
     void loadModel(string path);
     void processNode(aiNode *node, const aiScene *scene);
     Mesh processMesh(aiMesh *mesh, const aiScene *scene);
-    vector<Texture> loadMaterialTextures(aiMaterial *mat, aiTextureType type, string typeName);
+    vector<s_Texture> loadMaterialTextures(aiMaterial *mat, aiTextureType type, string typeName);
+    Renderer m_renderer;
 
 public:
     vector<Mesh> meshes;
     string directory;
-    vector<Texture> textures_loaded;
+    vector<s_Texture> textures_loaded;
     bool gammaCorrection;
-    Model(char *path, bool gamma = false);
+    Model(char *path, bool gamma = false, Renderer renderer);
     // ~Model();
     void draw(Shader &shader);
 };

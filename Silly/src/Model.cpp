@@ -1,7 +1,9 @@
 #include "Model.h"
 #include "ImageLoader.h"
 
-Model::Model(char *path, bool gamma) : gammaCorrection(gamma)
+Texture m_texture;
+
+Model::Model(char *path, bool gamma, Renderer renderer) : gammaCorrection(gamma), m_renderer(renderer)
 {
     loadModel(path);
 }
@@ -107,20 +109,20 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
 
     aiMaterial *material = scene->mMaterials[mesh->mMaterialIndex];
 
-    vector<Texture> diffuseMaps = loadMaterialTextures(material, aiTextureType_DIFFUSE, "texture_diffuse");
+    vector<s_Texture> diffuseMaps = loadMaterialTextures(material, aiTextureType_DIFFUSE, "texture_diffuse");
     textures.insert(textures.end(), diffuseMaps.begin(), diffuseMaps.end());
 
-    vector<Texture> specularMaps = loadMaterialTextures(material, aiTextureType_SPECULAR, "texture_specular");
+    vector<s_Texture> specularMaps = loadMaterialTextures(material, aiTextureType_SPECULAR, "texture_specular");
     textures.insert(textures.end(), specularMaps.begin(), specularMaps.end());
-    vector<Texture> normalMaps = loadMaterialTextures(material, aiTextureType_HEIGHT, "texture_normal");
+    vector<s_Texture> normalMaps = loadMaterialTextures(material, aiTextureType_HEIGHT, "texture_normal");
     textures.insert(textures.end(), normalMaps.begin(), normalMaps.end());
-    vector<Texture> heightMaps = loadMaterialTextures(material, aiTextureType_AMBIENT, "texture_height");
+    vector<s_Texture> heightMaps = loadMaterialTextures(material, aiTextureType_AMBIENT, "texture_height");
     textures.insert(textures.end(), heightMaps.begin(), heightMaps.end());
 
-    return Mesh(vertices, indices, textures);
-}
+    return Mesh(vertices, indices, m_texture, m_renderer);
+} 
 
-vector<Texture> Model::loadMaterialTextures(aiMaterial *mat, aiTextureType type, string typeName)
+vector<s_Texture> Model::loadMaterialTextures(aiMaterial *mat, aiTextureType type, string typeName)
 {
     cout << "loading material textures" << endl;
     vector<Texture> textures;
@@ -138,7 +140,7 @@ vector<Texture> Model::loadMaterialTextures(aiMaterial *mat, aiTextureType type,
         {
             if (strcmp(textures_loaded[j].path.data(), str.C_Str()) == 0)
             {
-                textures.push_back(textures_loaded[j]);
+                m_texture.assignTexture(textures_loaded[j]);
 
                 skip = true;
                 break;
@@ -147,16 +149,16 @@ vector<Texture> Model::loadMaterialTextures(aiMaterial *mat, aiTextureType type,
 
         if (!skip)
         {
-            Texture texture;
+            s_Texture texture;
             TextureLoader textureLoader;
             textureLoader.loadTexture(str.C_Str(), directory);
             texture.id = textureLoader.getTexture();
             texture.type = typeName;
             texture.path = str.C_Str();
-            textures.push_back(texture);
+            m_texture.assignTexture(texture);
             textures_loaded.push_back(texture);
         }
     }
 
-    return textures;
+    return m_texture.getTextures();
 }

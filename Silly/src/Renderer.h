@@ -4,16 +4,20 @@
 
 #pragma once
 //#include <GLFW/glfw3.h>
+#include <vector>
 #include "Window.h"
 #include "Camera.h"
+#include "Shader.h"
 
 
 class Renderer {
 private:
+    unsigned int VAO, VBO, EBO;
     Camera *m_mainCamera;
+    Shader m_shader;
 
 public:
-    Renderer();
+    Renderer(Shader shader);
     void init();
 
     void render();
