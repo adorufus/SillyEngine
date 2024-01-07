@@ -35,7 +35,7 @@ public:
     string directory;
     vector<s_Texture> textures_loaded;
     bool gammaCorrection;
-    Model(char *path, bool gamma = false, Renderer renderer);
+    Model(char *path, Renderer renderer, bool gamma = false);
     // ~Model();
     void draw(Shader &shader);
 };

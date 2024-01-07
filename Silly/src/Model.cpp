@@ -3,7 +3,7 @@
 
 Texture m_texture;
 
-Model::Model(char *path, bool gamma, Renderer renderer) : gammaCorrection(gamma), m_renderer(renderer)
+Model::Model(char *path, Renderer renderer, bool gamma) : gammaCorrection(gamma), m_renderer(renderer)
 {
     loadModel(path);
 }
@@ -51,7 +51,7 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
 {
     vector<Vertex> vertices;
     vector<unsigned int> indices;
-    vector<Texture> textures;
+    vector<s_Texture> textures;
 
     for (unsigned int i = 0; i < mesh->mNumVertices; i++)
     {

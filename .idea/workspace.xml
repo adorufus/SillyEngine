@@ -30,6 +30,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5547db0c-c261-4883-bf1b-c1d4d68dab28" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/src/Model.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/src/Model.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silly/src/Model.h" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/src/Model.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Silly/vendor/osx/assimp" beforeDir="false" afterPath="$PROJECT_DIR$/Silly/vendor/osx/assimp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/imgui" beforeDir="false" afterPath="$PROJECT_DIR$/includes/imgui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/imgui/.gitattributes" beforeDir="false" />
@@ -338,6 +340,11 @@
       </method>
     </configuration>
     <configuration name="SillyRun" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SillyEngine" TARGET_NAME="rendering_engine" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SillyEngine" RUN_TARGET_NAME="rendering_engine">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
